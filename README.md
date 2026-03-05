@@ -12,7 +12,7 @@ The project is in a 'works for me' state and has no regards of any other scripts
 - when there is no bluetooth audio stream present, play some default sound to allow an easy check if the http stream works
 
 ## Maybe's
-- turn this documentatom into a setup_script.sh
+- turn this documentation into a setup_script.sh
 - move streaming from ffmpeg to icecast/darkice
 - make the device discoverable only a limited time after power on
 - make a minimal web interface for managing devices (discoverable on/off, remove paired devices)
