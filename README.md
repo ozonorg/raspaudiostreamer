@@ -8,8 +8,8 @@ The project is in a 'works for me' state and has no regards of any other scripts
 
 
 ## To Dos
-- make the stream a service that works all the time regardless of a bluetooth audio stream present and there is no intteraction needed with the system at all.
-- when there is no bluetooth audio stream present play some default sound to allow an easy check if the http stream works
+- make the stream a service that works all the time regardless of a bluetooth audio stream present and there is no interaction needed with the system at all.
+- when there is no bluetooth audio stream present, play some default sound to allow an easy check if the http stream works
 
 ## Maybe's
 - move streaming from ffmpeg to icecast/darkice
