@@ -10,7 +10,7 @@ The project is in a 'works for me' state and has no regards of any other scripts
 - make the stream a service that works all the time regardless of a bluetooth audio stream present
 - when there is no bluetooth audio stream present play some default sound to allow an easy check if the http stream works
 
-## May Be
+## Maybe's
 - move streaming from ffmpeg to icecast/darkice
 - make the device discoverable only a limited time after power on
 - make a minimal web interface for managing devices (discoverable on/off, remove paired devices)
