@@ -79,6 +79,7 @@ Paste the script:
 ```
 #!/usr/bin/python3
 # SPDX-License-Identifier: LGPL-2.1-or-later
+# This Script comes from: https://github.com/fdanis-oss/pw_wp_bluetooth_rpi_speaker
 
 import argparse
 import dbus
