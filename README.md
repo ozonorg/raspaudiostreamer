@@ -16,7 +16,8 @@ This project can be used for:
 - Some services (Bluetooth, Bluetooth-agent, ffmpeg, icecast) are set up as system services. The audio routing is done by the pi user.
 - The project is in a 'works for me' state and has no regards of any other scripts or services on the machine.
 - The device accepts any Bluetooth connection request automatically. Any nearby device can pair and connect.
-- This was a days (on sick leave) work. There may be any kind of redundancies and odd detours. Any comments are welcome.
+- This was a days (on sick leave) work. There may be any kind of redundancies and odd detours.
+- This was documented ex post and has not been tested by me yet. I am just glad the thing works ;) 
 
 ## Known Bugs
 - The 'Name' in '/etc/bluetooth/main.conf' is not used, but the machine name.
@@ -54,7 +55,7 @@ sudo loginctl enable-linger
 ```
 sudo apt install -y pipewire-audio pulseaudio-utils bluez-tools python3-dbus python3-gi wireplumber pipewire-pulse libspa-0.2-bluetooth icecast2
 ```
-Some packages are already part of the distribution used here, some packages used in the setup may be missing on other distributions. You will need the icecast source password you shoose during setup later.
+Some packages are already part of the distribution used here, some packages used in the setup may be missing on other distributions. You will need the icecast source password you choose during setup later.
 
 ## Enable sound routing, bluetooth and icecast
 
