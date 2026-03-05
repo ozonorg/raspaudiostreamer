@@ -283,7 +283,7 @@ Description=Bluetooth HTTP MP3 Stream
 After=network.target sound.target
 
 [Service]
-ExecStart=/usr/bin/ffmpeg -f pulse -i auto_null.monitor -ac 2 -ar 44100 -b:a 128k -f mp3 -content_type audio/mpeg -listen 1 http://0.0.0.0:8000/mp3
+ExecStart=/usr/bin/ffmpeg -f pulse -i auto_null.monitor -ac 2 -ar 44100 -b:a 128k -f mp3 -headers "Content-Type: audio/mpeg" -listen 1 http://0.0.0.0:8000/stream.mp3
 Restart=always
 RestartSec=2
 User=pi
