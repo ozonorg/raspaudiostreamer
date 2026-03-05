@@ -1,5 +1,5 @@
 # Raspaudio - A Pi based Bluetooth audio sink with http stream output 
-I own an old internet radio receiver that has neither Bluetooth nor a line in. In order to play music from my phone I wanted a device that can act as a bluetooth audio sink and forward the stream via http.
+I own an old internet radio receiver that has neither Bluetooth nor a line in. In order to play music from my phone I wanted a device that can act as a Bluetooth audio sink and forward the stream via http.
 I am using a Raspberry Pi Zero 2 W with the latest Raspberry Pi OS (13.2).
 
 ## Remarks
@@ -11,16 +11,16 @@ I am using a Raspberry Pi Zero 2 W with the latest Raspberry Pi OS (13.2).
 - The 'Name' in '/etc/bluetooth/main.conf' ist not used, but the machine name. 
 
 ## To Dos
-- make the stream a service that works all the time regardless of a bluetooth audio stream present and there is no interaction needed with the system at all.
-- when there is no bluetooth audio stream present, play some default sound to allow an easy check if the http stream works
+- Make the stream a service that works all the time regardless of a Bluetooth audio stream present and there is no interaction needed with the system at all.
+- When there is no Bluetooth audio stream present, play some default sound to allow an easy check if the http stream works
 
 ## Maybe's
-- turn this documentation into a setup_script.sh
-- move streaming from ffmpeg to icecast/darkice
-- make the device discoverable only a limited time after power on
-- make a minimal web interface for managing devices (discoverable on/off, remove paired devices)
-- harden the setup (readonly FS)
-- make a container version
+- Turn this documentation into a setup_script.sh
+- Move streaming from ffmpeg to icecast/darkice
+- Make the device discoverable only a limited time after power on
+- Make a minimal web interface for managing devices (discoverable on/off, remove paired devices)
+- Harden the setup (readonly FS)
+- Make a container version
 
 ## Base Installation
 
@@ -44,18 +44,19 @@ sudo loginctl enable-linger
 ```
 sudo apt install -y pipewire-audio pulseaudio-utils bluez-tools python3-dbus wireplumber pipewire-pulse libspa-0.2-bluetooth
 ```
-Some packages are already part of the distribution.
+Some packages are already part of the distribution used here, some packages used in the setup may be missing on other distributions.
 
 ## Enable sound routing and bluetooth
 
 ```
 systemctl --user enable --now pipewire pipewire-pulse wireplumber
+
 systemctl enable --now bluetooth
 ```
 
 ## Configure Bluetooth
 
-Setup Bluetooth to handle automatic connections gracefully and to enable A2DP (experimental feature)
+Setup Bluetooth to handle automatic connections gracefully and enable A2DP (experimental feature).
 ```
 sudo nano /etc/bluetooth/main.conf
 ```
@@ -72,9 +73,9 @@ JustWorksRepairing = always
 ```
 
 ## Setup Service (agent) for autoconnect.
-Setup the System so that it will accept any bluetooth connection request at any time without confirmation, using the python script from [fdanis-oss/pw_wp_bluetooth_rpi_speaker](https://github.com/fdanis-oss/pw_wp_bluetooth_rpi_speaker).
+Setup the System so that it will accept any Bluetooth connection request at any time without confirmation, using the python script from [fdanis-oss/pw_wp_bluetooth_rpi_speaker](https://github.com/fdanis-oss/pw_wp_bluetooth_rpi_speaker).
 
-A general agent script can be found in the [Bluez Documentation](https://github.com/bluez/bluez/blob/master/test/simple-agent)
+For reference, a general agent script can be found in the [Bluez Documentation](https://github.com/bluez/bluez/blob/master/test/simple-agent).
 ```
 sudo nano /usr/local/bin/bt-agent.py
 ```
@@ -227,7 +228,7 @@ if __name__ == '__main__':
     mainloop.run()
 ```
 
-Make the script executable
+Make the script executable:
 ```
 sudo chmod +x /usr/local/bin/bt-agent.py
 ```
@@ -236,7 +237,7 @@ For the agent script we create a systemd service so it will start and restart au
 ```
 sudo nano /etc/systemd/system/bt-auto-agent.service
 ```
-contents: 
+paste contents: 
 ```
 [Unit]
 Description=BlueZ Auto Pairing Agent (NoInputNoOutput)
@@ -254,7 +255,7 @@ Environment=PYTHONUNBUFFERED=1
 [Install]
 WantedBy=multi-user.target
 ```
-Then properly register the new service with the system and enable and start it at the same time. 
+Then properly register the new service with the system and enable/start it. 
 ```
 sudo systemctl daemon-reload
 sudo systemctl enable --now bt-auto-agent.service
