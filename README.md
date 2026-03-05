@@ -1,6 +1,14 @@
-# Raspaudio - A Pi based Bluetooth audio sink with http stream output 
+# Raspaudio
+Turn a Raspberry Pi Zero 2 W into a **Bluetooth A2DP receiver that rebroadcasts the audio as an HTTP MP3 stream**.
+
 I own an old internet radio receiver that has neither Bluetooth nor a line in. In order to play music from my phone I wanted a device that can act as a Bluetooth audio sink and forward the stream via http.
 I am using a Raspberry Pi Zero 2 W with the latest Raspberry Pi OS (13.2). 
+
+This project can be used for:
+
+- Streaming phone audio into a local network
+- Bluetooth audio bridge for legacy audio systems
+- Remote audio monitoring
 
 ## Remarks
 - The device needs a working network/wifi connection with an assigned IPv4 address. 
@@ -305,3 +313,13 @@ The A2DP sink stream shows up as `auto_null.monitor`. You can check the availabl
 Check if Bluetooth audio is detected:
 
 ```wpctl status```
+
+## Feedback
+
+If you have questions, ideas, or improvements, feel free to:
+
+- open an **Issue**
+- start a **Discussion**
+- submit a **Pull Request**
+
+Feedback is very welcome.
