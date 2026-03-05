@@ -1,10 +1,11 @@
 # Raspaudio - A Pi based Bluetooth audio sink with http stream output 
 I own an old internet radio receiver that has neither Bluetooth nor a line in. In order to play music from my phone I wanted a device that can act as a Bluetooth audio sink and forward the stream via http.
-I am using a Raspberry Pi Zero 2 W with the latest Raspberry Pi OS (13.2). The device needs a working network/wifi connection with an assigned IPv4 address. 
+I am using a Raspberry Pi Zero 2 W with the latest Raspberry Pi OS (13.2). 
 
 ## Remarks
+- The device needs a working network/wifi connection with an assigned IPv4 address. 
 - The setup is done as the 'pi' default user, thus the 'sudo' commands.
-- Some services (bluetooth, Bluetooth-agent, ffmpeg) are set up as system services. The audio routing is done by the pi user.
+- Some services (Bluetooth, Bluetooth-agent, ffmpeg) are set up as system services. The audio routing is done by the pi user.
 - The project is in a 'works for me' state and has no regards of any other scripts or services on the machine.
 - The device accepts any Bluetooth connection request automatically. Any nearby device can pair and connect.
 - This was a days (on sick leave) work. There may be any kind of redundancies and odd detours. Any comments are welcome.
