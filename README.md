@@ -297,9 +297,10 @@ Connect and A2DP source like a phone, start to play some music and route it to t
 
 
 ## Debugging Info / Troubleshooting
-The A2DP sink stream shows up as `auto_null.monitor`. You can check the savailable sinks using
+The A2DP sink stream shows up as `auto_null.monitor`. You can check the available sinks using
 
 ```pactl list sources short```
 
-Check if Bluetooth audio is detected
+Check if Bluetooth audio is detected:
+
 ```wpctl status```
