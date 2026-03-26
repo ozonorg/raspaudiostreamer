@@ -22,9 +22,10 @@ This project can be used for:
 ## Known Bugs
 - The 'Name' in '/etc/bluetooth/main.conf' is not used, but the machine name.
 - Sometimes you have to restart the system, re-pair or reconnect device for A2DP to work.
+- Service is very laggy (several seconds)
 
 ## To Dos
-- When there is no Bluetooth audio stream present, play some default sound to allow an easy check if the http stream works
+- When there is no Bluetooth audio stream present, play some default sound to allow an easy check if the http stream works.
 
 ## Maybe's
 - Turn this documentation into a setup_script.sh
